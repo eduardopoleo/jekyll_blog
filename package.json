@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "dependencies": {
+    "postcss-import": "^14.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.4.0",
+    "cssnano": "^5.0.10",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "^2.2.19"
+  },
+  "scripts": {
+    "jekyll:dev": "bundle exec jekyll serve --incremental --watch",
+    "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
+    "css:dev": "postcss _sass/main.scss --output assets/css/style.css --watch",
+    "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css",
+    "dev": "concurrently --kill-others \"npm run jekyll:dev\" \"npm run css:dev\"",
+    "build": "npm run css:build && npm run jekyll:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
