@@ -1,0 +1,6 @@
+- name: Home
+  link: /
+- name: My Story
+  link: /my-story.html
+- name: Skills
+  link: /skill.html
